@@ -20,11 +20,14 @@ cliquePosicaoInvite = 1310,513 #Clicar no texto de indicados na aba dashboard
 
 
 #QUESTIONARIO
+#Se usar True não precisa preencher a parte de baixo
 questionario = False
 
 #Use 1 para Carregar o local do arquivo e 2 para carregar um texto
 walletLoad = True
-walletRef = "C:/Users/Jean/Desktop/Nova pasta/Carteiras.txt" #Texto precisa ser no formato "LINK,CARTEIRA" e se houver mais de uma carteira ultilize o simbolo "|" para separar
+#Se walletLoad == True ponha a localização exata do arquivo .txt com formato de uma carteira por linha
+#Se walletLoad == False escreva diretamente na walletRef as carteiras. Use "|" para separalas.
+walletRef = "C:/Users/Jean/Desktop/botTron/Carteiras.txt"
 #Use 1 para USDT e 2 para Seguidores
 limiteType = 1
 #Valor a ser verificado
