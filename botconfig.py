@@ -16,19 +16,16 @@ cliqueInputTextWallet = 379,725
 cliquenoBotao = 958,728 #Clicar no Botao
 cliqueIconeURL = 1820,874 #Clicar no botão para copiar url de ref
 cliquePosicaoUSDT = 78,555 #Clicar no texto de USDT na aba dashboard
-cliquePosicaoInvite = 1310,513 #Clicar no texto de indicados na aba dashboard
+cliquePosicaoInvite = 1308,666 #Clicar no texto de indicados na aba dashboard
 
 
 #QUESTIONARIO
-#Se usar True não precisa preencher a parte de baixo
 questionario = False
 
 #Use 1 para Carregar o local do arquivo e 2 para carregar um texto
 walletLoad = True
-#Se walletLoad == True ponha a localização exata do arquivo .txt com formato de uma carteira por linha
-#Se walletLoad == False escreva diretamente na walletRef as carteiras. Use "|" para separalas.
-walletRef = "C:/Users/Jean/Desktop/botTron/Carteiras.txt"
+walletRef = "Carteiras.txt" #Texto precisa ser no formato "LINK,CARTEIRA" e se houver mais de uma carteira ultilize o simbolo "|" para separar
 #Use 1 para USDT e 2 para Seguidores
-limiteType = 1
+limiteType = 2
 #Valor a ser verificado
-limiteValue = 200
+limiteValue = 100
