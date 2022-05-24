@@ -208,6 +208,7 @@ for i in range(0,len(walletRef)):
                     xpath2 = "]/td[4]/span/span/div/div/span/div/a/div/div"
                     wallet = browser.find_elements_by_xpath(xpath1 + str(j) + xpath2 + "[1]")[0].text + browser.find_elements_by_xpath(xpath1 + str(j) + xpath2 + "[2]")[0].text
                     arraywallet[k].append(wallet)
+
             browser.close()
             time.sleep(2)
             for k in range(0,20):
