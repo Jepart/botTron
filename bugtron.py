@@ -197,21 +197,27 @@ for i in range(0,len(walletRef)):
 
         pyautogui.hotkey('alt','f4')
         
-        if forRepeat == 0: 
-            browser = webdriver.Chrome()
-            arraywallet = [[],[]]
-            for k in range(0,2):
-                browser.get(scan)
-                time.sleep(6)
-                for j in range(1,21):
-                    xpath1 = "/html/body/div[1]/div[2]/main/div[3]/div/div/div/div/div/div/div/div/div/div/table/tbody/tr["
-                    xpath2 = "]/td[4]/span/span/div/div/span/div/a/div/div"
-                    wallet = browser.find_elements_by_xpath(xpath1 + str(j) + xpath2 + "[1]")[0].text + browser.find_elements_by_xpath(xpath1 + str(j) + xpath2 + "[2]")[0].text
-                    arraywallet[k].append(wallet)
+        try:
+            if forRepeat == 0: 
+                browser = webdriver.Chrome()
+                arraywallet = [[],[]]
+                for k in range(0,2):
+                    browser.get(scan)
+                    time.sleep(6)
+                    for j in range(1,21):
+                        try:
+                            select = '//tr['+str(j)+']/td[4]/span/span/div/div/span/div/a/div/div'
+                            linkwallet = browser.find_element_by_xpath(select+"[1]").text + browser.find_element_by_xpath(select+"[2]").text
+                        except:
+                            next
+                            browser.close()
+                        arraywallet[k].append(linkwallet)
 
-            browser.close()
-            time.sleep(2)
-            for k in range(0,20):
-                golink(priorytuWallet,True,arraywallet[0][k],arraywallet[1][k])
+                browser.close()
+                time.sleep(2)
+                for k in range(0,20):
+                    golink(priorytuWallet,True,arraywallet[0][k],arraywallet[1][k])
+        except:
+            next
 
 
